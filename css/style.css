@@ -7,15 +7,15 @@
     --bg: #fff8ff;
     --card: #ffffff;
     --muted: #7a6b80;
-    --accent: #00d49c;      /* 少し青みのある緑 */
-    --accent-2: #d6fff5;    /* 薄い緑の淡色 */
+    --accent: #008f8f;      /* もう少し青寄りの深いティール系グリーン */
+    --accent-2: #b2e0e0;    /* 薄いティールグリーンの淡色 */
+    --light-blue: #d0f0ff;  /* 薄い水色ワンポイント */
+    --light-red: #ffd0d0;   /* 薄い赤ワンポイント */
     --glass: rgba(255, 255, 255, 0.6);
     --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     --radius: 14px;
     --max-width: 1100px;
     --gap: 18px;
-    --light-blue: #d0f0ff;  /* 薄い水色ワンポイント */
-    --light-red: #ffd0d0;   /* 薄い赤ワンポイント */
     font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -28,7 +28,12 @@ body {
     height: 100%;
     margin: 0;
     padding: 28px 16px;
-    background: linear-gradient(180deg, var(--bg), #fff);
+    background: linear-gradient(
+      180deg,
+      #fff8ff 0%,
+      #e0f7fa 50%,
+      #ffffff 100%
+    );
     color: #2b2430;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -90,8 +95,8 @@ body {
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: linear-gradient(135deg, var(--accent), #00f2a9);
-    box-shadow: 0 6px 20px rgba(0, 212, 156, 0.12), inset 0 -6px 20px rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, var(--accent), #00b3b3);
+    box-shadow: 0 6px 20px rgba(0, 143, 143, 0.12), inset 0 -6px 20px rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,19 +160,18 @@ body {
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    box-shadow: 0 6px 16px rgba(0, 212, 156, 0.14);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 143, 143, 0.14);
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background: #00c896;
-    box-shadow: 0 0 12px var(--light-blue);
+    background: #007c7c;
 }
 
 .btn.ghost {
     background: transparent;
     color: var(--accent);
-    border: 1px solid rgba(0, 212, 156, 0.12);
+    border: 1px solid rgba(0, 143, 143, 0.12);
     box-shadow: none;
 }
 
@@ -197,7 +201,7 @@ body {
 }
 
 .tag:hover {
-    background: linear-gradient(135deg, var(--light-red), var(--accent-2));
+    background: var(--accent-2);
     border-color: var(--accent);
     color: var(--accent);
 }
@@ -206,7 +210,7 @@ body {
     background: var(--accent);
     color: white;
     border: none;
-    box-shadow: 0 6px 16px rgba(0, 212, 156, 0.12);
+    box-shadow: 0 6px 16px rgba(0, 143, 143, 0.12);
 }
 
 /* ===== Main area ===== */
@@ -286,7 +290,7 @@ body {
     padding: 6px 8px;
     border-radius: 8px;
     font-weight: 700;
-    color: #3a8161; /* ちょっと青み寄りの緑 */
+    color: #2f6161;
     font-size: 12px;
 }
 
@@ -382,4 +386,17 @@ a.inline {
 
 a.inline:hover {
     text-decoration: underline;
+}
+
+/* ===== ワンポイントの薄い青と薄い赤 ===== */
+.highlight-blue {
+    background-color: var(--light-blue);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.highlight-red {
+    background-color: var(--light-red);
+    padding: 2px 6px;
+    border-radius: 6px;
 }
