@@ -20,7 +20,7 @@ function buildTags() {
     tagsWrap.innerHTML = '';
 
     // 明示的に順番を決めて回す
-    const order = ["全体", "警察", "禁止", "その他タグ"];
+    const order = ["全体", "救急隊", "禁止", "その他タグ"];
     order.forEach(cat => {
         const tags = tagCategories[cat];
         if (!tags || tags.length === 0) return;
