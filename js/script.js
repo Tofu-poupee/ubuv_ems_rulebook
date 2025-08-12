@@ -72,7 +72,7 @@ function buildTagsFromRules() {
             tags.forEach(t => prohibitSet.add(t));
         } else if (tags.includes('全体')) {
             tags.forEach(t => allSet.add(t));
-        } else if (tags.includes('警察')) {
+        } else if (tags.includes('救急隊')) {
             tags.forEach(t => policeSet.add(t));
         } else {
             tags.forEach(t => otherSet.add(t));
@@ -81,7 +81,7 @@ function buildTagsFromRules() {
 
     tagCategories["禁止"] = Array.from(prohibitSet).sort();
     tagCategories["全体"] = Array.from(allSet).sort();
-    tagCategories["警察"] = Array.from(policeSet).sort();
+    tagCategories["救急隊"] = Array.from(policeSet).sort();
     tagCategories["その他タグ"] = Array.from(otherSet).sort();
 
     buildTags();
@@ -175,3 +175,4 @@ $('#downloadJson').addEventListener('click', () => {
 
 buildTagsFromRules();
 filterRules();
+
